@@ -24,6 +24,7 @@ html {
     --secondary: #5D5D5F;
     --light: #E5E5E5;
     --border: 1px solid #E5E5E5;
+    --error: rgba(255, 0, 0, 0.8);
 }
 
 body {
@@ -154,6 +155,11 @@ body {
 
 .car-img {
     vertical-align: bottom;
+    transition: all 0.3s ease-out;
+}
+
+.card-img:hover .car-img {
+    transform: scale(1.1);
 }
 
 .card-title {
@@ -182,11 +188,11 @@ body {
     width: 100%;
 }
 
-.card-footer .btn {
+.btn-reserve {
     padding: 15px 0;
 }
 
-.card-footer .btn:hover {
+.btn-reserve:hover {
     background: var(--light);
     color: var(--main);
 }
@@ -221,7 +227,7 @@ body {
     max-width: 344px;
 }
 
-.price-form .btn {
+.btn-price {
     padding: 20px 0;
 }
 
@@ -238,6 +244,15 @@ body {
     transition: all 0.3s ease-out;
 }
 
+.form-input.error {
+    border-color: var(--error);
+}
+
+.form-input.error:focus {
+    border-color: transparent;
+    box-shadow: 0 0 3px var(--error);
+}
+
 .form-input::placeholder {
     color: var(--secondary);
 }
@@ -245,6 +260,14 @@ body {
 .form-input:focus {
     border-color: transparent;
     box-shadow: 0 0 3px var(--secondary);
+}
+
+#inputs-error {
+    color: var(--error);
+    font-size: smaller;
+    font-weight: bold;
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
 .price-img {
